@@ -5,12 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brewsters | Photography</title>
     <style>
+        /* This links your custom font file */
+        @font-face {
+            font-family: 'Protest';
+            src: url('protest.ttf') format('truetype');
+        }
+
         /* Global Aesthetic */
-        body { background-color: #000; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: 'Protest', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden; 
+        }
+
         header { border-bottom: 1px solid #222; padding: 40px 20px; text-align: center; }
+        
         nav { margin-top: 20px; }
-        nav a { color: #777; text-decoration: none; margin: 0 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; cursor: pointer; transition: 0.3s; }
+        nav a { 
+            color: #777; text-decoration: none; margin: 0 15px; 
+            text-transform: uppercase; letter-spacing: 2px; font-size: 13px; 
+            cursor: pointer; transition: 0.3s; 
+        }
         nav a:hover { color: #fff; }
+
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
@@ -38,20 +58,19 @@
         .photo-feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .photo-feed div { aspect-ratio: 1/1; background: #111; border: 1px solid #222; }
 
-        /* Social */
-        .lightwidget-widget { filter: grayscale(100%); transition: 0.6s; }
-        .lightwidget-widget:hover { filter: grayscale(0%); }
-
         /* Form Styling */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
-        .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
-        input, select, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; box-sizing: border-box; font-size: 14px; margin-bottom: 15px; font-family: inherit; }
-        input:focus, textarea:focus { border-color: #fff; outline: none; }
-        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-        .submit-btn:hover { background: #888; }
+        input, select, textarea { 
+            width: 100%; padding: 15px; background: #000; border: 1px solid #333; 
+            color: #fff; box-sizing: border-box; font-size: 14px; margin-bottom: 15px; 
+            font-family: 'Protest', sans-serif; 
+        }
+        .submit-btn { 
+            background: #fff; color: #000; border: none; padding: 18px; 
+            font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; 
+            font-family: 'Protest', sans-serif; 
+        }
     </style>
 </head>
 <body>
@@ -79,7 +98,6 @@
         </div>
         <div class="about-text">
             <h2 style="margin-bottom: 25px;">THE VISION</h2>
-            
             <p>
                 What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I saw that the camera wasn’t just a tool for art; it was a tool for change which is how <strong>Brewsters Media</strong> came to be.
             </p>
@@ -135,7 +153,6 @@
 </div>
 
 <div id="social" class="section">
-    <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">@ELIJAHBREWSTER_</h2>
     <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
     <iframe src="https://cdn.lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </div>
@@ -143,40 +160,10 @@
 <div id="inquire" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">INQUIRE</h2>
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
-        
         <label>Full Name</label>
         <input type="text" name="name" required>
-
         <label>Email or Phone Number</label>
-        <input type="text" name="contact_info" placeholder="How can I reach you?" required>
-
-        <label>Type of Content</label>
-        <select name="content-type">
-            <option>Sports Content</option>
-            <option>Couples Sessions</option>
-            <option>Graduation Content</option>
-            <option>Small Business Promotions</option>
-            <option>Vlogs</option>
-        </select>
-
-        <div style="border: 1px solid #222; padding: 15px; margin-bottom: 15px;">
-            <label>Step 1: Select Date</label>
-            <input type="date" id="dateInput" name="date" onchange="showTime()" required style="margin-bottom:0;">
-        </div>
-
-        <div id="timeStep" class="prompt-step">
-            <label>Step 2: Time Preference</label>
-            <input type="text" id="timeInput" name="time" placeholder="Enter preferred time" oninput="showLocation()">
-        </div>
-
-        <div id="locationStep" class="prompt-step">
-            <label>Step 3: Location</label>
-            <input type="text" name="location" placeholder="City or Venue">
-        </div>
-
-        <label style="margin-top:10px;">Tell me about your project</label>
-        <textarea name="message" rows="4" placeholder="Share your vision..."></textarea>
-
+        <input type="text" name="contact_info" required>
         <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
     </form>
 </div>
@@ -185,29 +172,16 @@
     function showSection(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
-        closeSubGallery(); // Reset gallery view when switching tabs
+        closeSubGallery();
     }
-
     function openSubGallery(id) {
         document.getElementById('gallery-main').style.display = 'none';
         document.querySelectorAll('.sub-gallery').forEach(g => g.style.display = 'none');
         document.getElementById(id).style.display = 'block';
     }
-
     function closeSubGallery() {
         document.getElementById('gallery-main').style.display = 'block';
         document.querySelectorAll('.sub-gallery').forEach(g => g.style.display = 'none');
-    }
-
-    function showTime() {
-        document.getElementById('timeStep').style.display = 'block';
-    }
-
-    function showLocation() {
-        const timeVal = document.getElementById('timeInput').value;
-        if(timeVal.length > 0) {
-            document.getElementById('locationStep').style.display = 'block';
-        }
     }
 </script>
 

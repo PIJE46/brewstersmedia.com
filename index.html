@@ -14,11 +14,16 @@
         .active { display: block; }
 
         /* About Layout */
-        .about-container { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .about-container { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .about-photo { flex: 1; border: 1px solid #333; line-height: 0; min-width: 300px; }
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
         .about-photo img:hover { filter: grayscale(0%); }
-        .about-text { flex: 1; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
+        .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
+
+        /* Typography */
+        h2 { letter-spacing: 4px; text-transform: uppercase; margin-top: 0; }
+        p { line-height: 1.8; color: #ccc; font-size: 15px; margin-bottom: 20px; }
+        .mission-quote { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; font-style: italic; color: #fff; font-size: 18px; }
 
         /* Gallery System */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -35,10 +40,6 @@
         .back-btn:hover { color: #fff; }
         .photo-feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .photo-feed div { aspect-ratio: 1/1; background: #111; border: 1px solid #222; }
-
-        /* Social */
-        .lightwidget-widget { filter: grayscale(100%); transition: 0.6s; }
-        .lightwidget-widget:hover { filter: grayscale(0%); }
 
         /* Inquire Form */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
@@ -64,7 +65,7 @@
 </header>
 
 <div id="home" class="section active">
-    <h2 style="text-align: center; margin-top: 120px; font-weight: 200; letter-spacing: 4px;">VISUAL STORYTELLING</h2>
+    <h2 style="text-align: center; margin-top: 120px; font-weight: 200; letter-spacing: 4px;">ARCHIVING THE ADRENALINE</h2>
 </div>
 
 <div id="about" class="section">
@@ -74,7 +75,23 @@
         </div>
         <div class="about-text">
             <h2>THE VISION</h2>
-            <p>Capturing high-contrast imagery that demands attention. Specialized in sports, brand promotions, and cinematic vlogs based in Fall River, MA.</p>
+            <p>
+                Growing up, pictures were more than just paper—they were time machines. I found myself constantly chasing the nostalgia of the past, realizing that a single frame held the power to keep a memory alive forever. That deep respect for the image is what birthed <strong>Brewsters Media</strong>.
+            </p>
+            <p>
+                What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I saw that the camera wasn’t just a tool for art; it was a tool for change.
+            </p>
+            
+            <div class="mission-quote">
+                "Shoot Pictures Not People" is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.
+            </div>
+
+            <p>
+                We want to show the next generation that there is more power in capturing a moment than in taking one. By getting creative and finding their own vision, they can build a legacy instead of a statistic. 
+            </p>
+            <p>
+                Whether we are on the sidelines of a game or documenting a private milestone, Brewsters Media is dedicated to the value of life, the power of memory, and the craft of visual storytelling.
+            </p>
         </div>
     </div>
 </div>

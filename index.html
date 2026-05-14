@@ -6,9 +6,10 @@
     <title>Brewsters | Photography</title>
     <style>
         /* Global Aesthetic */
-        body { background-color: #000; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #000; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         header { border-bottom: 1px solid #222; padding: 40px 20px; text-align: center; }
-        nav a { color: #777; text-decoration: none; margin: 0 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; cursor: pointer; }
+        nav { margin-top: 20px; }
+        nav a { color: #777; text-decoration: none; margin: 0 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; cursor: pointer; transition: 0.3s; }
         nav a:hover { color: #fff; }
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
@@ -19,11 +20,7 @@
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
         .about-photo img:hover { filter: grayscale(0%); }
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
-
-        /* Typography */
-        h2 { letter-spacing: 4px; text-transform: uppercase; margin-top: 0; }
-        p { line-height: 1.8; color: #ccc; font-size: 15px; margin-bottom: 20px; }
-        .mission-quote { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; font-style: italic; color: #fff; font-size: 18px; }
+        .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
         /* Gallery System */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -41,20 +38,27 @@
         .photo-feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .photo-feed div { aspect-ratio: 1/1; background: #111; border: 1px solid #222; }
 
-        /* Inquire Form */
+        /* Social */
+        .lightwidget-widget { filter: grayscale(100%); transition: 0.6s; }
+        .lightwidget-widget:hover { filter: grayscale(0%); }
+
+        /* Form Styling */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
-        input, select, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; box-sizing: border-box; font-size: 14px; margin-bottom: 15px; }
-        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; }
+        input, select, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; box-sizing: border-box; font-size: 14px; margin-bottom: 15px; font-family: inherit; }
+        input:focus, textarea:focus { border-color: #fff; outline: none; }
+        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #888; }
     </style>
 </head>
 <body>
 
 <header>
     <h1 style="letter-spacing: 8px; font-size: 2.5rem; margin-bottom: 5px;">BREWSTERS</h1>
-    <p style="color: #666; font-style: italic; margin-bottom: 25px;">Shoot Pictures Not People</p>
+    <p style="color: #666; font-style: italic; margin-bottom: 5px;">Shoot Pictures Not People</p>
     <nav>
         <a onclick="showSection('home')">Home</a>
         <a onclick="showSection('about')">About</a>
@@ -65,7 +69,7 @@
 </header>
 
 <div id="home" class="section active">
-    <h2 style="text-align: center; margin-top: 120px; font-weight: 200; letter-spacing: 4px;">ARCHIVING THE ADRENALINE</h2>
+    <h2 style="text-align: center; margin-top: 120px; font-weight: 200; letter-spacing: 4px;">VISUAL STORYTELLING</h2>
 </div>
 
 <div id="about" class="section">
@@ -74,22 +78,24 @@
             <img src="profile.jpg" alt="Elijah Brewster">
         </div>
         <div class="about-text">
-            <h2>THE VISION</h2>
-            <p>
-                Growing up, pictures were more than just paper—they were time machines. I found myself constantly chasing the nostalgia of the past, realizing that a single frame held the power to keep a memory alive forever. That deep respect for the image is what birthed <strong>Brewsters Media</strong>.
-            </p>
-            <p>
-                What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I saw that the camera wasn’t just a tool for art; it was a tool for change.
-            </p>
+            <h2 style="margin-bottom: 25px;">THE VISION</h2>
             
-            <div class="mission-quote">
-                "Shoot Pictures Not People" is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.
+            <p>
+                What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I saw that the camera wasn’t just a tool for art; it was a tool for change which is how <strong>Brewsters Media</strong> came to be.
+            </p>
+
+            <div class="mission-box">
+                <h3 style="letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 10px;">"SHOOT PICTURES NOT PEOPLE"</h3>
+                <p style="font-style: italic; color: #fff; margin-bottom: 0;">
+                    This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.
+                </p>
             </div>
 
             <p>
-                We want to show the next generation that there is more power in capturing a moment than in taking one. By getting creative and finding their own vision, they can build a legacy instead of a statistic. 
+                We want to show the next generation that there is more power in capturing a moment than in taking one. By getting creative and finding their own vision, they can build a <strong>legacy instead of a statistic</strong>.
             </p>
-            <p>
+
+            <p style="margin-top: 25px; border-top: 1px solid #222; padding-top: 20px; color: #888; font-style: italic;">
                 Whether we are on the sidelines of a game or documenting a private milestone, Brewsters Media is dedicated to the value of life, the power of memory, and the craft of visual storytelling.
             </p>
         </div>
@@ -137,6 +143,7 @@
 <div id="inquire" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">INQUIRE</h2>
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
+        
         <label>Full Name</label>
         <input type="text" name="name" required>
 
@@ -152,7 +159,7 @@
             <option>Vlogs</option>
         </select>
 
-        <div style="border: 1px solid #222; padding: 15px; margin-bottom:15px;">
+        <div style="border: 1px solid #222; padding: 15px; margin-bottom: 15px;">
             <label>Step 1: Select Date</label>
             <input type="date" id="dateInput" name="date" onchange="showTime()" required style="margin-bottom:0;">
         </div>
@@ -167,7 +174,7 @@
             <input type="text" name="location" placeholder="City or Venue">
         </div>
 
-        <label style="margin-top:10px;">Project Vision</label>
+        <label style="margin-top:10px;">Tell me about your project</label>
         <textarea name="message" rows="4" placeholder="Share your vision..."></textarea>
 
         <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
@@ -178,7 +185,7 @@
     function showSection(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
-        closeSubGallery(); 
+        closeSubGallery(); // Reset gallery view when switching tabs
     }
 
     function openSubGallery(id) {
@@ -192,8 +199,16 @@
         document.querySelectorAll('.sub-gallery').forEach(g => g.style.display = 'none');
     }
 
-    function showTime() { document.getElementById('timeStep').style.display = 'block'; }
-    function showLocation() { if(document.getElementById('timeInput').value.length > 0) document.getElementById('locationStep').style.display = 'block'; }
+    function showTime() {
+        document.getElementById('timeStep').style.display = 'block';
+    }
+
+    function showLocation() {
+        const timeVal = document.getElementById('timeInput').value;
+        if(timeVal.length > 0) {
+            document.getElementById('locationStep').style.display = 'block';
+        }
+    }
 </script>
 
 </body>

@@ -13,16 +13,16 @@
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
-        /* About Layout: Left Photo, Right Vertical Text */
+        /* About Layout */
         .about-container { display: flex; gap: 50px; }
         .about-photo { flex: 1; background: #111; border: 1px solid #333; min-height: 500px; display: flex; align-items: center; justify-content: center; }
         .about-text { flex: 1; border-left: 2px solid #fff; padding-left: 40px; display: flex; flex-direction: column; justify-content: center; }
 
-        /* Gallery Grid: 4 Boxes */
+        /* Gallery Grid */
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
         .grid-item { aspect-ratio: 1/1; background: #111; border: 1px solid #222; }
 
-        /* Social Feed Aesthetic: B&W to Color on Hover */
+        /* Social Feed Aesthetic: Grayscale to Color */
         .lightwidget-widget {
             filter: grayscale(100%);
             transition: filter 0.6s ease;
@@ -31,7 +31,7 @@
             filter: grayscale(0%);
         }
 
-        /* Form Styling with Progressive Prompts */
+        /* Form Styling */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -59,38 +59,38 @@
     </nav>
 </header>
 
-<!-- HOME SECTION -->
+<!-- HOME -->
 <div id="home" class="section active">
     <h2 style="text-align: center; margin-top: 120px; font-weight: 200; letter-spacing: 4px;">VISUAL STORYTELLING</h2>
 </div>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <div id="about" class="section">
     <div class="about-container">
         <div class="about-photo">[ IMAGE ]</div>
         <div class="about-text">
             <h2>THE VISION</h2>
-            <p>Capturing high-contrast imagery that demands attention. High-end photography and videography based in Massachusetts.</p>
+            <p>Capturing high-contrast imagery that demands attention. Specialized in sports, vlogs, and brand promotions.</p>
         </div>
     </div>
 </div>
 
-<!-- GALLERY SECTION -->
+<!-- GALLERY -->
 <div id="gallery" class="section">
     <div class="grid">
         <div class="grid-item"></div><div class="grid-item"></div><div class="grid-item"></div><div class="grid-item"></div>
     </div>
 </div>
 
-<!-- SOCIAL SECTION (@elijahbrewster_) -->
+<!-- SOCIAL (Updated Widget) -->
 <div id="social" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">@ELIJAHBREWSTER_</h2>
     <!-- LightWidget WIDGET -->
     <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-    <iframe src="//lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+    <iframe src="https://cdn.lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </div>
 
-<!-- INQUIRE SECTION (Connected to xaqvgjwj) -->
+<!-- INQUIRE -->
 <div id="inquire" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">INQUIRE</h2>
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
@@ -113,25 +113,21 @@
             <option>Video</option>
         </select>
 
-        <!-- DATE SELECTION -->
         <div style="margin-top: 20px; border: 1px solid #222; padding: 15px;">
             <label>Step 1: Select Date</label>
             <input type="date" id="dateInput" name="date" onchange="showTime()" required>
         </div>
 
-        <!-- TIME SELECTION (Reveals after Date) -->
         <div id="timeStep" class="prompt-step">
             <label>Step 2: Time Preference</label>
             <input type="text" id="timeInput" name="time" placeholder="Enter preferred time" oninput="showLocation()">
         </div>
 
-        <!-- LOCATION SELECTION (Reveals after Time) -->
         <div id="locationStep" class="prompt-step">
             <label>Step 3: Location</label>
             <input type="text" name="location" placeholder="City or Venue">
         </div>
 
-        <!-- PROJECT DESCRIPTION (Stays at Bottom) -->
         <div style="margin-top: 20px;">
             <label>Tell me about your project</label>
             <textarea name="message" rows="4" placeholder="Share your vision..."></textarea>

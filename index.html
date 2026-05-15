@@ -49,6 +49,7 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
+        /* Folder Preview Images */
         .sports-bg { background-image: url('sports/preview.jpg'); }
         .couples-bg { background-image: url('couples/preview.jpg'); }
         .business-bg { background-image: url('business/preview.jpg'); }
@@ -59,12 +60,12 @@
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
-        /* Inquire Form */
+        /* Inquire Form Styling */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
-        .step-hidden { display: none; margin-top: 20px; }
+        .step-hidden { display: none; margin-top: 10px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
         input, select, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; box-sizing: border-box; margin-bottom: 15px; font-family: inherit; }
-        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; width: 100%; }
+        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; width: 100%; margin-top: 10px; }
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -127,7 +128,7 @@
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
         
         <label>Full Name</label>
-        <input type="text" name="name" required placeholder="Name">
+        <input type="text" name="name" required placeholder="Full Name">
         
         <label>Email or Phone Number</label>
         <input type="text" name="contact" required placeholder="Email or Phone">
@@ -138,23 +139,20 @@
         </select>
         
         <label>Date</label>
-        <input type="date" name="date" required id="dateInput" onchange="showNextStep('timeStep')">
+        <input type="date" name="date" required onchange="showLogistics()">
         
-        <div id="timeStep" class="step-hidden">
+        <div id="logisticsSteps" class="step-hidden">
             <label>Time</label>
-            <input type="text" name="time" placeholder="Preferred time" oninput="showNextStep('locStep')">
-        </div>
-        
-        <div id="locStep" class="step-hidden">
+            <input type="text" name="time" placeholder="Preferred time">
+            
             <label>Location</label>
-            <input type="text" name="location" placeholder="City or Venue" oninput="showNextStep('visionStep')">
+            <input type="text" name="location" placeholder="City or Venue">
         </div>
 
-        <div id="visionStep" class="step-hidden">
-            <label>Tell me about your project</label>
-            <textarea name="vision" rows="4" placeholder="Describe your vision..."></textarea>
-            <button type="submit" class="submit-btn">SUBMIT INQUIRY</button>
-        </div>
+        <label>Tell me about your project</label>
+        <textarea name="vision" rows="4" placeholder="Describe your vision..."></textarea>
+        
+        <button type="submit" class="submit-btn">SUBMIT INQUIRY</button>
     </form>
 </div>
 
@@ -172,10 +170,8 @@
         document.getElementById('gallery-main').style.display = 'block';
         document.querySelectorAll('.sub-gallery').forEach(g => g.style.display = 'none');
     }
-    function showNextStep(stepId) {
-        const step = document.getElementById(stepId);
-        step.style.display = 'block';
-        step.style.animation = 'fadeIn 0.5s ease forwards';
+    function showLogistics() {
+        document.getElementById('logisticsSteps').style.display = 'block';
     }
 </script>
 

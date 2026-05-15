@@ -26,7 +26,7 @@
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
-        /* About Section - Restored original styling */
+        /* About Section - Fully Restored Wording */
         .about-container { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .about-photo { flex: 1; border: 1px solid #333; line-height: 0; min-width: 300px; }
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
@@ -34,7 +34,7 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
-        /* Gallery Grid & Vertical Preview Effect */
+        /* Gallery Grid & Vertical "Film Strip" Animation */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -48,21 +48,22 @@
             background-size: 100% 33.33%; 
             transition: transform 1.5s steps(3); z-index: 1; opacity: 0.3; filter: grayscale(100%);
         }
+        /* Vertical scroll effect on hover */
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 0px 0px 10px rgba(0,0,0,0.8); }
 
-        /* Preview Image Paths */
-        .sports-bg { background-image: url('sports/preview.jpg'); }
-        .couples-bg { background-image: url('couples/preview.jpg'); } /* Standard path */
-        .business-bg { background-image: url('business/preview.jpg'); }
-        .vlogs-bg { background-image: url('vlogs/preview.jpg'); }
+        /* Updated File Paths for all categories */
+        .sports-bg { background-image: url('sports/cp-preview.jpg'); }
+        .couples-bg { background-image: url('couples/cp-preview.jpg'); }
+        .business-bg { background-image: url('business/cp-preview.jpg'); }
+        .vlogs-bg { background-image: url('vlogs/cp-preview.jpg'); }
 
         .sub-gallery { display: none; animation: fadeIn 0.5s ease; }
         .back-btn { cursor: pointer; color: #777; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; display: inline-block; }
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
-        /* Inquire Form Styling */
+        /* Inquire Form */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .step-hidden { display: none; margin-top: 10px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }

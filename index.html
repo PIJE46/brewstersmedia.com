@@ -49,7 +49,7 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
-        /* Folder Preview Images */
+        /* Preview Backgrounds */
         .sports-bg { background-image: url('sports/preview.jpg'); }
         .couples-bg { background-image: url('couples/preview.jpg'); }
         .business-bg { background-image: url('business/preview.jpg'); }
@@ -60,7 +60,7 @@
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
-        /* Inquire Form Styling */
+        /* Inquire Form */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .step-hidden { display: none; margin-top: 10px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
@@ -135,7 +135,12 @@
 
         <label>Type of Shoot</label>
         <select name="type">
-            <option>Sports</option><option>Couples</option><option>Graduation</option><option>Business</option><option>Vlogs</option>
+            <option>Sports</option>
+            <option>Couples</option>
+            <option>Graduation</option>
+            <option>Business</option>
+            <option>Vlogs</option>
+            <option>Other</option>
         </select>
         
         <label>Date</label>

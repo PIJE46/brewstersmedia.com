@@ -49,7 +49,7 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
-        /* Preview Backgrounds */
+        /* Background Previews */
         .sports-bg { background-image: url('sports/preview.jpg'); }
         .couples-bg { background-image: url('couples/preview.jpg'); }
         .business-bg { background-image: url('business/preview.jpg'); }
@@ -114,7 +114,17 @@
         </div>
     </div>
     <div id="sports-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>SPORTS</h2><div class="photo-feed"></div></div>
-    <div id="couples-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>COUPLES</h2><div class="photo-feed"></div></div>
+    <div id="couples-view" class="sub-gallery">
+        <span class="back-btn" onclick="closeSubGallery()">← Back</span>
+        <h2>COUPLES</h2>
+        <div class="photo-feed">
+            <img src="couples/EJ108492.jpeg">
+            <img src="couples/EJ108642.jpeg">
+            <img src="couples/EJ108709.jpeg">
+            <img src="couples/EJ108864-2.jpeg">
+            <img src="couples/EJ108910-2.jpeg">
+        </div>
+    </div>
     <div id="business-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>SMALL BUSINESS</h2><div class="photo-feed"></div></div>
     <div id="vlogs-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>VLOGS</h2><div class="photo-feed"></div></div>
 </div>
@@ -135,12 +145,7 @@
 
         <label>Type of Shoot</label>
         <select name="type">
-            <option>Sports</option>
-            <option>Couples</option>
-            <option>Graduation</option>
-            <option>Business</option>
-            <option>Vlogs</option>
-            <option>Other</option>
+            <option>Sports</option><option>Couples</option><option>Graduation</option><option>Business</option><option>Vlogs</option><option>Other</option>
         </select>
         
         <label>Date</label>

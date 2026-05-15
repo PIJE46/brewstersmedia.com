@@ -26,7 +26,7 @@
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
-        /* About Section Styling */
+        /* About Section */
         .about-container { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .about-photo { flex: 1; border: 1px solid #333; line-height: 0; min-width: 300px; }
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
@@ -49,10 +49,11 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
-        .sports-bg { background-image: url('sports/preview.jpg.jpeg'); }
-        .couples-bg { background-image: url('couples/preview.jpg.jpeg'); }
-        .business-bg { background-image: url('business/preview.jpg.jpeg'); }
-        .vlogs-bg { background-image: url('vlogs/preview.jpg.jpeg'); }
+        /* Preview Backgrounds */
+        .sports-bg { background-image: url('sports/preview.jpg'); }
+        .couples-bg { background-image: url('couples/preview.jpg'); }
+        .business-bg { background-image: url('business/preview.jpg'); }
+        .vlogs-bg { background-image: url('vlogs/preview.jpg'); }
 
         .sub-gallery { display: none; animation: fadeIn 0.5s ease; }
         .back-btn { cursor: pointer; color: #777; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; display: inline-block; }
@@ -88,15 +89,16 @@
 
 <div id="about" class="section">
     <div class="about-container">
-        <div class="about-photo"><img src="profile.JPG" alt="Profile"></div>
+        <div class="about-photo"><img src="profile.jpg" alt="Elijah Brewster"></div>
         <div class="about-text">
             <h2>THE VISION</h2>
-            <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger.</p>
+            <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I saw that the camera wasn’t just a tool for art; it was a tool for change which is how <strong>Brewsters Media</strong> came to be.</p>
             <div class="mission-box">
-                <h3>"SHOOT PICTURES NOT PEOPLE"</h3>
-                <p>This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.</p>
+                <h3 style="letter-spacing: 2px;">"SHOOT PICTURES NOT PEOPLE"</h3>
+                <p style="font-style: italic;">This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.</p>
             </div>
             <p>We want to show the next generation that there is more power in capturing a moment than in taking one. By getting creative and finding their own vision, they can build a <strong>legacy instead of a statistic</strong>.</p>
+            <p style="margin-top: 25px; border-top: 1px solid #222; padding-top: 20px; color: #888; font-style: italic;">Whether we are on the sidelines of a game or documenting a private milestone, Brewsters Media is dedicated to the value of life, the power of memory, and the craft of visual storytelling.</p>
         </div>
     </div>
 </div>
@@ -114,36 +116,36 @@
     <div id="sports-view" class="sub-gallery">
         <span class="back-btn" onclick="closeSubGallery()">← Back</span>
         <h2>SPORTS</h2>
-        <div class="photo-feed"></div>
+        <div class="photo-feed">
+            <img src="sports/image1.jpg">
+        </div>
     </div>
-
     <div id="couples-view" class="sub-gallery">
         <span class="back-btn" onclick="closeSubGallery()">← Back</span>
         <h2>COUPLES</h2>
         <div class="photo-feed">
-            <img src="couples/EJ108492.jpeg">
-            <img src="couples/EJ108642.jpeg">
-            <img src="couples/EJ108709.jpeg">
-            <img src="couples/EJ108864-2.jpeg">
-            <img src="couples/EJ108910-2.jpeg">
+            <img src="couples/image1.jpg">
         </div>
     </div>
-
     <div id="business-view" class="sub-gallery">
         <span class="back-btn" onclick="closeSubGallery()">← Back</span>
         <h2>SMALL BUSINESS</h2>
-        <div class="photo-feed"></div>
+        <div class="photo-feed">
+            <img src="business/image1.jpg">
+        </div>
     </div>
-
     <div id="vlogs-view" class="sub-gallery">
         <span class="back-btn" onclick="closeSubGallery()">← Back</span>
         <h2>VLOGS</h2>
-        <div class="photo-feed"></div>
+        <div class="photo-feed">
+            <img src="vlogs/image1.jpg">
+        </div>
     </div>
 </div>
 
 <div id="social" class="section">
-    <iframe src="https://cdn.lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" style="width:100%;border:0;height:600px;"></iframe>
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+    <iframe src="https://cdn.lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </div>
 
 <div id="inquire" class="section">
@@ -154,21 +156,34 @@
         
         <label>Contact Info</label>
         <input type="text" name="contact" required>
+
+        <label>Type</label>
+        <select name="type">
+            <option>Sports</option>
+            <option>Couples</option>
+            <option>Graduation</option>
+            <option>Business</option>
+            <option>Vlogs</option>
+        </select>
         
-        <label>Date</label>
-        <input type="date" name="date" required onchange="document.getElementById('timeStep').style.display='block'">
+        <div style="border: 1px solid #222; padding: 15px; margin-bottom: 15px;">
+            <label>Date</label>
+            <input type="date" name="date" required onchange="document.getElementById('timeStep').style.display='block'">
+        </div>
         
         <div id="timeStep" class="prompt-step">
             <label>Time</label>
-            <input type="text" name="time" placeholder="Desired time..." oninput="document.getElementById('locStep').style.display='block'">
+            <input type="text" name="time" placeholder="Preferred time" oninput="document.getElementById('locStep').style.display='block'">
         </div>
         
         <div id="locStep" class="prompt-step">
             <label>Location</label>
-            <input type="text" name="location" placeholder="City or venue..." oninput="document.getElementById('submitStep').style.display='block'">
+            <input type="text" name="location" oninput="document.getElementById('visionStep').style.display='block'">
         </div>
 
-        <div id="submitStep" class="prompt-step">
+        <div id="visionStep" class="prompt-step">
+            <label>Vision</label>
+            <textarea name="vision" rows="4" placeholder="Tell us about your project..."></textarea>
             <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
         </div>
     </form>

@@ -34,7 +34,7 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
-        /* Gallery Grid */
+        /* Gallery Grid & THE VERTICAL MOVE EFFECT */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -42,18 +42,22 @@
             display: flex; align-items: center; justify-content: center;
         }
         .live-play-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            transition: 0.5s ease; z-index: 1; opacity: 0.4; filter: grayscale(100%);
+            position: absolute; top: 0; left: 0; width: 100%; height: 300%; 
+            background-repeat: repeat-y;
+            background-position: top center;
+            background-size: 100% 33.33%; 
+            transition: transform 1.5s steps(3); z-index: 1; opacity: 0.3; filter: grayscale(100%);
         }
-        .grid-item:hover .live-play-bg { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
-        .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 2px 2px 4px #000; }
+        /* This creates the vertical "slide down" movement you remember */
+        .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
+        .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 0px 0px 10px rgba(0,0,0,0.8); }
 
-        /* Background Preview Logic - Using the actual filename from your folder */
+        /* PREVIEW IMAGE PATHS */
         .sports-bg { background-image: url('sports/preview.jpg'); }
-        .couples-bg { background-image: url('couples/preview.jpg.jpg'); }
+        
+        /* Fixed specifically for the filename in your screenshot */
+        .couples-bg { background-image: url('couples/preview.jpg.jpg'); } 
+        
         .business-bg { background-image: url('business/preview.jpg'); }
         .vlogs-bg { background-image: url('vlogs/preview.jpg'); }
 

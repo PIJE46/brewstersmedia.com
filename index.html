@@ -34,7 +34,7 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
-        /* Gallery Grid & Live Play Effect */
+        /* Gallery Grid - Simplest Possible Version */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -42,16 +42,16 @@
             display: flex; align-items: center; justify-content: center;
         }
         .live-play-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 300%; 
-            background-repeat: repeat-y; /* Changed to repeat-y for the film effect */
-            background-position: top center;
-            background-size: 100% 33.33%; /* Forces the preview image to fit one "frame" of the 300% height */
-            transition: transform 1.5s steps(3); z-index: 1; opacity: 0.3; filter: grayscale(100%);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: 0.5s ease; z-index: 1; opacity: 0.4; filter: grayscale(100%);
         }
-        .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
-        .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 0px 0px 10px rgba(0,0,0,0.8); }
+        .grid-item:hover .live-play-bg { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
+        .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 2px 2px 4px #000; }
 
-        /* Folder Preview Image Fixes */
+        /* DIRECT PATHS */
         .sports-bg { background-image: url('sports/preview.jpg'); }
         .couples-bg { background-image: url('couples/preview.jpg'); }
         .business-bg { background-image: url('business/preview.jpg'); }
@@ -62,7 +62,7 @@
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
-        /* Inquire Form Styling */
+        /* Inquire Form */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .step-hidden { display: none; margin-top: 10px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }

@@ -43,18 +43,19 @@
         }
         .live-play-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 300%; 
-            background-repeat: no-repeat;
+            background-repeat: repeat-y; /* Changed to repeat-y for the film effect */
             background-position: top center;
+            background-size: 100% 33.33%; /* Forces the preview image to fit one "frame" of the 300% height */
             transition: transform 1.5s steps(3); z-index: 1; opacity: 0.3; filter: grayscale(100%);
         }
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
-        .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
+        .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 0px 0px 10px rgba(0,0,0,0.8); }
 
         /* Folder Preview Image Fixes */
-        .sports-bg { background-image: url('./sports/preview.jpg'); background-size: cover; }
-        .couples-bg { background-image: url('./couples/preview.jpg'); background-size: cover; }
-        .business-bg { background-image: url('./business/preview.jpg'); background-size: cover; }
-        .vlogs-bg { background-image: url('./vlogs/preview.jpg'); background-size: cover; }
+        .sports-bg { background-image: url('sports/preview.jpg'); }
+        .couples-bg { background-image: url('couples/preview.jpg'); }
+        .business-bg { background-image: url('business/preview.jpg'); }
+        .vlogs-bg { background-image: url('vlogs/preview.jpg'); }
 
         .sub-gallery { display: none; animation: fadeIn 0.5s ease; }
         .back-btn { cursor: pointer; color: #777; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; display: inline-block; }
@@ -149,12 +150,7 @@
 
         <label>Type of Shoot</label>
         <select name="type">
-            <option>Sports</option>
-            <option>Couples</option>
-            <option>Graduation</option>
-            <option>Business</option>
-            <option>Vlogs</option>
-            <option>Other</option>
+            <option>Sports</option><option>Couples</option><option>Graduation</option><option>Business</option><option>Vlogs</option><option>Other</option>
         </select>
         
         <label>Date</label>
@@ -163,7 +159,6 @@
         <div id="logisticsSteps" class="step-hidden">
             <label>Time</label>
             <input type="text" name="time" placeholder="Preferred time">
-            
             <label>Location</label>
             <input type="text" name="location" placeholder="City or Venue">
         </div>

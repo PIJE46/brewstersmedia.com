@@ -26,6 +26,7 @@
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
+        /* About Section */
         .about-container { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .about-photo { flex: 1; border: 1px solid #333; line-height: 0; min-width: 300px; }
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
@@ -33,6 +34,7 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
+        /* Gallery Grid */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -47,21 +49,24 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
-        .sports-bg { background-image: url('sports/preview.jpg.jpeg'); }
-        .couples-bg { background-image: url('couples/preview.jpg.jpeg'); }
-        .business-bg { background-image: url('business/preview.jpg.jpeg'); }
-        .vlogs-bg { background-image: url('vlogs/preview.jpg.jpeg'); }
+        /* Preview Backgrounds */
+        .sports-bg { background-image: url('sports/preview.jpg'); }
+        .couples-bg { background-image: url('couples/preview.jpg'); }
+        .business-bg { background-image: url('business/preview.jpg'); }
+        .vlogs-bg { background-image: url('vlogs/preview.jpg'); }
 
         .sub-gallery { display: none; animation: fadeIn 0.5s ease; }
         .back-btn { cursor: pointer; color: #777; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; display: inline-block; }
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
+        /* Inquire Form */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
-        .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
+        .step-hidden { display: none; margin-top: 10px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
         input, select, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; box-sizing: border-box; margin-bottom: 15px; font-family: inherit; }
-        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; width: 100%; margin-top: 10px; }
+        
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -85,15 +90,16 @@
 
 <div id="about" class="section">
     <div class="about-container">
-        <div class="about-photo"><img src="profile.JPG" alt="Profile"></div>
+        <div class="about-photo"><img src="profile.jpg" alt="Profile"></div>
         <div class="about-text">
             <h2>THE VISION</h2>
-            <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I realized that a camera wasn't just a tool for capturing action on the field, but a way to tell stories that matter.</p>
+            <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I saw that the camera wasn’t just a tool for art; it was a tool for change which is how <strong>Brewsters Media</strong> came to be.</p>
             <div class="mission-box">
-                <h3>"SHOOT PICTURES NOT PEOPLE"</h3>
-                <p>This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out. We want to show the next generation that there is more power in capturing a moment than in taking one.</p>
+                <h3 style="letter-spacing: 2px;">"SHOOT PICTURES NOT PEOPLE"</h3>
+                <p style="font-style: italic;">This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.</p>
             </div>
-            <p>By getting creative and finding their own vision, they can build a legacy instead of a statistic. Whether it's a game-winning shot, a quiet moment between a couple, or a small business finding its voice, we are here to document the hustle and the heart.</p>
+            <p>We want to show the next generation that there is more power in capturing a moment than in taking one. By getting creative and finding their own vision, they can build a <strong>legacy instead of a statistic</strong>.</p>
+            <p style="margin-top: 25px; border-top: 1px solid #222; padding-top: 20px; color: #888; font-style: italic;">Whether we are on the sidelines of a game or documenting a private milestone, Brewsters Media is dedicated to the value of life, the power of memory, and the craft of visual storytelling.</p>
         </div>
     </div>
 </div>
@@ -107,64 +113,51 @@
             <div class="grid-item" onclick="openSubGallery('vlogs-view')"><div class="live-play-bg vlogs-bg"></div><span>Vlogs</span></div>
         </div>
     </div>
-
-    <div id="sports-view" class="sub-gallery">
-        <span class="back-btn" onclick="closeSubGallery()">← Back</span>
-        <h2>SPORTS</h2>
-        <div class="photo-feed"></div>
-    </div>
-
-    <div id="couples-view" class="sub-gallery">
-        <span class="back-btn" onclick="closeSubGallery()">← Back</span>
-        <h2>COUPLES</h2>
-        <div class="photo-feed">
-            <img src="couples/EJ108492.jpeg">
-            <img src="couples/EJ108642.jpeg">
-            <img src="couples/EJ108709.jpeg">
-            <img src="couples/EJ108864-2.jpeg">
-            <img src="couples/EJ108910-2.jpeg">
-        </div>
-    </div>
-
-    <div id="business-view" class="sub-gallery">
-        <span class="back-btn" onclick="closeSubGallery()">← Back</span>
-        <h2>SMALL BUSINESS</h2>
-        <div class="photo-feed"></div>
-    </div>
-
-    <div id="vlogs-view" class="sub-gallery">
-        <span class="back-btn" onclick="closeSubGallery()">← Back</span>
-        <h2>VLOGS</h2>
-        <div class="photo-feed"></div>
-    </div>
+    <div id="sports-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>SPORTS</h2><div class="photo-feed"></div></div>
+    <div id="couples-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>COUPLES</h2><div class="photo-feed"></div></div>
+    <div id="business-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>SMALL BUSINESS</h2><div class="photo-feed"></div></div>
+    <div id="vlogs-view" class="sub-gallery"><span class="back-btn" onclick="closeSubGallery()">← Back</span><h2>VLOGS</h2><div class="photo-feed"></div></div>
 </div>
 
 <div id="social" class="section">
-    <iframe src="https://cdn.lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" style="width:100%;border:0;height:600px;"></iframe>
+    <iframe src="https://cdn.lightwidget.com/widgets/fc4261e4ecd95d708ed7b6001dd06cf2.html" style="width:100%;border:0;height:500px;"></iframe>
 </div>
 
 <div id="inquire" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">INQUIRE</h2>
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
-        <label>Full Name</label><input type="text" name="name" required>
-        <label>Contact Info</label><input type="text" name="contact" required>
+        
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Full Name">
+        
+        <label>Email or Phone Number</label>
+        <input type="text" name="contact" required placeholder="Email or Phone">
+
+        <label>Type of Shoot</label>
+        <select name="type">
+            <option>Sports</option>
+            <option>Couples</option>
+            <option>Graduation</option>
+            <option>Business</option>
+            <option>Vlogs</option>
+            <option>Other</option>
+        </select>
         
         <label>Date</label>
-        <input type="date" name="date" onchange="document.getElementById('timeStep').style.display='block'">
+        <input type="date" name="date" required onchange="showLogistics()">
         
-        <div id="timeStep" class="prompt-step">
+        <div id="logisticsSteps" class="step-hidden">
             <label>Time</label>
-            <input type="text" name="time" placeholder="Desired time..." oninput="document.getElementById('locStep').style.display='block'">
-        </div>
-        
-        <div id="locStep" class="prompt-step">
+            <input type="text" name="time" placeholder="Preferred time">
+            
             <label>Location</label>
-            <input type="text" name="location" placeholder="City or venue..." oninput="document.getElementById('submitStep').style.display='block'">
+            <input type="text" name="location" placeholder="City or Venue">
         </div>
 
-        <div id="submitStep" class="prompt-step">
-            <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
-        </div>
+        <label>Tell me about your project</label>
+        <textarea name="vision" rows="4" placeholder="Describe your vision..."></textarea>
+        
+        <button type="submit" class="submit-btn">SUBMIT INQUIRY</button>
     </form>
 </div>
 
@@ -176,12 +169,14 @@
     }
     function openSubGallery(id) {
         document.getElementById('gallery-main').style.display = 'none';
-        document.querySelectorAll('.sub-gallery').forEach(g => g.style.display = 'none');
         document.getElementById(id).style.display = 'block';
     }
     function closeSubGallery() {
         document.getElementById('gallery-main').style.display = 'block';
         document.querySelectorAll('.sub-gallery').forEach(g => g.style.display = 'none');
+    }
+    function showLogistics() {
+        document.getElementById('logisticsSteps').style.display = 'block';
     }
 </script>
 

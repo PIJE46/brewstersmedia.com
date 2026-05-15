@@ -7,6 +7,7 @@
     <style>
         @font-face {
             font-family: 'Protest';
+            /* Matches the file in your GitHub root */
             src: url('protest.ttf') format('truetype');
         }
 
@@ -47,7 +48,7 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
-        /* Hover Previews */
+        /* Backgrounds for Hover - Matches the double extension seen in your folder */
         .sports-bg { background-image: url('sports/preview.jpg.jpeg'); }
         .couples-bg { background-image: url('couples/preview.jpg.jpeg'); }
         .business-bg { background-image: url('business/preview.jpg.jpeg'); }
@@ -58,7 +59,6 @@
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
-        /* RESTORED: Inquire Form Styling */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
@@ -87,7 +87,7 @@
 
 <div id="about" class="section">
     <div class="about-container">
-        <div class="about-photo"><img src="profile.JPG" alt="Elijah Brewster"></div>
+        <div class="about-photo"><img src="profile.JPG" alt="Profile"></div>
         <div class="about-text">
             <h2>THE VISION</h2>
             <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger.</p>
@@ -161,7 +161,7 @@
         
         <div id="locStep" class="prompt-step">
             <label>Location</label>
-            <input type="text" name="location" placeholder="City or specific venue..." oninput="document.getElementById('submitStep').style.display='block'">
+            <input type="text" name="location" placeholder="City or venue..." oninput="document.getElementById('submitStep').style.display='block'">
         </div>
 
         <div id="submitStep" class="prompt-step">

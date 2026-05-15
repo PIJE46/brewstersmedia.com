@@ -7,7 +7,6 @@
     <style>
         @font-face {
             font-family: 'Protest';
-            /* Ensure this matches your file name on GitHub exactly */
             src: url('protest.ttf') format('truetype');
         }
 
@@ -27,7 +26,6 @@
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
-        /* About Section Styling */
         .about-container { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .about-photo { flex: 1; border: 1px solid #333; line-height: 0; min-width: 300px; }
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
@@ -35,7 +33,6 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
-        /* Gallery Grid & Hover Effect */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -50,24 +47,23 @@
         .grid-item:hover .live-play-bg { transform: translateY(-66.6%); opacity: 0.8; filter: grayscale(0%); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; }
 
-        /* Backgrounds for Hover Previews */
+        /* Hover Previews */
         .sports-bg { background-image: url('sports/preview.jpg.jpeg'); }
         .couples-bg { background-image: url('couples/preview.jpg.jpeg'); }
         .business-bg { background-image: url('business/preview.jpg.jpeg'); }
         .vlogs-bg { background-image: url('vlogs/preview.jpg.jpeg'); }
 
-        /* Sub-Gallery Styling */
         .sub-gallery { display: none; animation: fadeIn 0.5s ease; }
         .back-btn { cursor: pointer; color: #777; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; display: inline-block; }
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
-        /* Inquire Form Styling */
+        /* RESTORED: Inquire Form Styling */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
         input, select, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; box-sizing: border-box; margin-bottom: 15px; font-family: inherit; }
-        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .submit-btn { background: #fff; color: #000; border: none; padding: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; margin-top: 20px; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -154,10 +150,23 @@
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
         <label>Full Name</label><input type="text" name="name" required>
         <label>Contact Info</label><input type="text" name="contact" required>
-        <label>Date</label><input type="date" id="dateInput" onchange="document.getElementById('timeStep').style.display='block'">
-        <div id="timeStep" class="prompt-step"><label>Time</label><input type="text" oninput="document.getElementById('locStep').style.display='block'"></div>
-        <div id="locStep" class="prompt-step"><label>Location</label><input type="text" name="location"></div>
-        <button type="submit" class="submit-btn">SUBMIT</button>
+        
+        <label>Date</label>
+        <input type="date" name="date" onchange="document.getElementById('timeStep').style.display='block'">
+        
+        <div id="timeStep" class="prompt-step">
+            <label>Time</label>
+            <input type="text" name="time" placeholder="Desired time..." oninput="document.getElementById('locStep').style.display='block'">
+        </div>
+        
+        <div id="locStep" class="prompt-step">
+            <label>Location</label>
+            <input type="text" name="location" placeholder="City or specific venue..." oninput="document.getElementById('submitStep').style.display='block'">
+        </div>
+
+        <div id="submitStep" class="prompt-step">
+            <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+        </div>
     </form>
 </div>
 

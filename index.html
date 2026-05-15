@@ -26,6 +26,7 @@
         .section { display: none; padding: 60px 20px; max-width: 1100px; margin: auto; }
         .active { display: block; }
 
+        /* About Section Styling */
         .about-container { display: flex; gap: 50px; align-items: flex-start; flex-wrap: wrap; }
         .about-photo { flex: 1; border: 1px solid #333; line-height: 0; min-width: 300px; }
         .about-photo img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; }
@@ -33,6 +34,7 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
+        /* Gallery Grid */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -57,6 +59,7 @@
         .photo-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .photo-feed img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #111; }
 
+        /* Inquire Form */
         .inquire-form { display: flex; flex-direction: column; max-width: 500px; margin: auto; background: #050505; padding: 30px; border: 1px solid #111; }
         .prompt-step { display: none; margin-top: 20px; animation: fadeIn 0.5s ease forwards; }
         label { display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; color: #aaa; }
@@ -88,12 +91,12 @@
         <div class="about-photo"><img src="profile.JPG" alt="Profile"></div>
         <div class="about-text">
             <h2>THE VISION</h2>
-            <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger. I realized that a camera wasn't just a tool for capturing action on the field, but a way to tell stories that matter.</p>
+            <p>What started as a way to merge my passion for photography with my love of sports quickly evolved into something bigger.</p>
             <div class="mission-box">
                 <h3>"SHOOT PICTURES NOT PEOPLE"</h3>
-                <p>This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out. We want to show the next generation that there is more power in capturing a moment than in taking one.</p>
+                <p>This is our core mission. In a world where the youth are often pulled toward dangerous lifestyles, we advocate for the lens as a way out.</p>
             </div>
-            <p>By getting creative and finding their own vision, they can build a legacy instead of a statistic. Whether it's a game-winning shot, a quiet moment between a couple, or a small business finding its voice, we are here to document the hustle and the heart.</p>
+            <p>We want to show the next generation that there is more power in capturing a moment than in taking one. By getting creative and finding their own vision, they can build a <strong>legacy instead of a statistic</strong>.</p>
         </div>
     </div>
 </div>
@@ -146,11 +149,14 @@
 <div id="inquire" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">INQUIRE</h2>
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
-        <label>Full Name</label><input type="text" name="name" required>
-        <label>Contact Info</label><input type="text" name="contact" required>
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+        
+        <label>Contact Info</label>
+        <input type="text" name="contact" required>
         
         <label>Date</label>
-        <input type="date" name="date" onchange="document.getElementById('timeStep').style.display='block'">
+        <input type="date" name="date" required onchange="document.getElementById('timeStep').style.display='block'">
         
         <div id="timeStep" class="prompt-step">
             <label>Time</label>

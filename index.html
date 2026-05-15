@@ -34,7 +34,7 @@
         .about-text { flex: 1.5; border-left: 2px solid #fff; padding-left: 40px; min-width: 300px; }
         .mission-box { border-left: 3px solid #fff; padding-left: 20px; margin: 30px 0; }
 
-        /* Gallery Grid - Simplest Possible Version */
+        /* Gallery Grid */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .grid-item { 
             aspect-ratio: 16/9; background: #111; border: 1px solid #222; 
@@ -51,9 +51,9 @@
         .grid-item:hover .live-play-bg { opacity: 0.8; filter: grayscale(0%); transform: scale(1.05); }
         .grid-item span { position: relative; z-index: 2; letter-spacing: 4px; text-transform: uppercase; font-weight: bold; font-size: 18px; text-shadow: 2px 2px 4px #000; }
 
-        /* DIRECT PATHS */
+        /* Background Preview Logic - Using the actual filename from your folder */
         .sports-bg { background-image: url('sports/preview.jpg'); }
-        .couples-bg { background-image: url('couples/preview.jpg'); }
+        .couples-bg { background-image: url('couples/preview.jpg.jpg'); }
         .business-bg { background-image: url('business/preview.jpg'); }
         .vlogs-bg { background-image: url('vlogs/preview.jpg'); }
 
@@ -141,31 +141,24 @@
 <div id="inquire" class="section">
     <h2 style="text-align: center; letter-spacing: 5px; margin-bottom: 30px;">INQUIRE</h2>
     <form class="inquire-form" action="https://formspree.io/f/xaqvgjwj" method="POST">
-        
         <label>Full Name</label>
         <input type="text" name="name" required placeholder="Full Name">
-        
         <label>Email or Phone Number</label>
         <input type="text" name="contact" required placeholder="Email or Phone">
-
         <label>Type of Shoot</label>
         <select name="type">
             <option>Sports</option><option>Couples</option><option>Graduation</option><option>Business</option><option>Vlogs</option><option>Other</option>
         </select>
-        
         <label>Date</label>
         <input type="date" name="date" required onchange="showLogistics()">
-        
         <div id="logisticsSteps" class="step-hidden">
             <label>Time</label>
             <input type="text" name="time" placeholder="Preferred time">
             <label>Location</label>
             <input type="text" name="location" placeholder="City or Venue">
         </div>
-
         <label>Tell me about your project</label>
         <textarea name="vision" rows="4" placeholder="Describe your vision..."></textarea>
-        
         <button type="submit" class="submit-btn">SUBMIT INQUIRY</button>
     </form>
 </div>
